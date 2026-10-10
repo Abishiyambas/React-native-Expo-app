@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 
 import Logo from '../assets/img/logo_light.png'
 
+
 const Home = () => {
   return (
     <View style={styles.container}>
