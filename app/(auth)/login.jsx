@@ -1,15 +1,26 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Pressable, Text } from 'react-native'
 import {Link} from 'expo-router'
+import {Colors} from '../../constants/Colors'
 
 // themed components
 import ThemedView from '../../components/ThemedView'
 import ThemedText from '../../components/ThemedText'
+import ThemedButton from '../../components/ThemedButton'
 import Spacer from '../../components/Spacer'
 
 
+
+
 const Login = () => {
+
+const handleSubmit = () => {
+    console.log('register form submitted')
+}
+
+
   return (
    <ThemedView style={styles.container}>
+
 
 
     <Spacer />
@@ -17,11 +28,24 @@ const Login = () => {
         Login to your Account
     </ThemedText>
 
+    <ThemedButton onPress={handleSubmit}>
+<Text style={{color: '#f2f2f2'}}>Login</Text>
+    </ThemedButton>
+
+
+
+    {/* <Pressable 
+    onPress={handleSubmit}
+    style={({pressed})=>[styles.btn, pressed && styles.pressed]}>
+    <Text style={{color: '#f2f2f2'}}>Login</Text>
+    </Pressable> */}
+
     <Spacer height={100}/>
-    <Link href='/register'></Link>
+    <Link href='/register'>
     <ThemedText style={{textAlign: 'center'}}>
         register instead 
     </ThemedText>
+    </Link>
    </ThemedView>
   )
 }
@@ -33,6 +57,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
+        alignItems: 'center',
     },
 
     title: {
@@ -40,6 +65,15 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginBottom: 30
     },
+
+    btn:{
+        backgroundColor: Colors.primary,
+        padding: 15,
+        borderRadius: 5
+    },
+    pressed:{
+        opacity: 0.8,
+    }
 
 })
 
