@@ -9,9 +9,9 @@ const About = () => {
    const theme = Colors[colorScheme] ?? Colors.light //default
 
   return (
-    <View style = {[styles.container, {backgroundColor: theme.
-    background}]}>
+    <View style = {styles.container}>
     <Text style = {styles.title}>About Page</Text>
+
     <Link style = {styles.link} href="/">Back home</Link>
     </View>
   )
