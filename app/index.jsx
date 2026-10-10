@@ -1,26 +1,37 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import {Link} from 'expo-router'
 
 import Logo from '../assets/img/logo_light.png'
 
 //themed components
 import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import ThemedText from '../components/ThemedText'
+import Spacer from '../components/Spacer'
+
+
 
 
 const Home = () => {
   return (
     <ThemedView style={styles.container}>
-      <Image source={Logo} style={styles.img} />
+     <ThemedLogo />
+     <Spacer height={20} />
 
-      <Text style={styles.title}>The Number 1</Text>
+      <ThemedText style={styles.title} title = {true}>
+        The Number 1
+      </ThemedText>
 
-      <Text style={{ marginTop: 10, marginBottom: 30 }}>
-        Reading List App
-      </Text>
+<Spacer  height={10}/>
+      <ThemedText>Reading List App</ThemedText>
+<Spacer />
 
-
-  <Link style={styles.link} href="/about">About Page</Link>
-  <Link style={styles.link} href="/contact">Contact Page</Link>
+  <Link style={styles.link} href="/about">
+  <ThemedText>About Page</ThemedText>
+  </Link>
+  <Link style={styles.link} href="/contact">
+  <ThemedText>Contact Page</ThemedText>
+  </Link>
 
       
     </ThemedView>
@@ -31,13 +42,9 @@ export default Home
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#e0dfe8',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  img: {
-    marginVertical: 20
   },
   title: {
     fontWeight: 'bold',
